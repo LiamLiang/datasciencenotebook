@@ -77,3 +77,4 @@ wcwidth==0.1.7
 webencodings==0.5.1
 websocket-client==0.48.0
 widgetsnbextension==3.2.1
+git+https://github.com/data-8/nbgitpuller
