@@ -1,0 +1,14 @@
+#ipython_notebook img{                                                                                        
+    display:block;
+    background: url(logo-thumb-ischool-2017-fullcolor.png) no-repeat;
+    background-size: contain;
+    width: 250px;
+    height: 50px;
+    padding-left: 250px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#ipython_notebook {
+    height: 60px !important;
+}

@@ -1,12 +1,14 @@
-FROM jupyter/all-spark-notebook
+FROM jupyter/pyspark-notebook
 
 LABEL maintainer="Daniel Acuna <deacuna@syr.edu>"
 
 USER root
 
-COPY requirements.txt /tmp/
-
-RUN pip install -r /tmp/requirements.txt \
+RUN pip install \
+    "nbgrader==0.5.4" \
+    "git+https://github.com/data-8/nbgitpuller" \
+    "jupyter-spark==0.4.0" \
+    "lxml==4.2.1" \
     && \
     jupyter serverextension enable --py jupyter_spark --sys-prefix && \
     jupyter serverextension enable --py nbgitpuller --sys-prefix && \
@@ -24,6 +26,8 @@ RUN pip install -r /tmp/requirements.txt \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
-RUN rm /tmp/requirements.txt
-
 USER $NB_UID
+
+RUN mkdir -p /home/$NB_USER/.jupyter/custom/
+COPY logo-thumb-ischool-2017-fullcolor.png /home/$NB_USER/.jupyter/custom/
+COPY custom.css /home/$NB_USER/.jupyter/custom/
