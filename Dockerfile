@@ -26,8 +26,8 @@ RUN pip install \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
+COPY logo-thumb-ischool-2017-fullcolor.png /opt/conda/lib/python3.6/site-packages/notebook/static/custom/
+COPY custom.css /opt/conda/lib/python3.6/site-packages/notebook/static/custom/
+
 USER $NB_UID
 
-RUN mkdir -p /home/$NB_USER/.jupyter/custom/
-COPY logo-thumb-ischool-2017-fullcolor.png /home/$NB_USER/.jupyter/custom/
-COPY custom.css /home/$NB_USER/.jupyter/custom/
