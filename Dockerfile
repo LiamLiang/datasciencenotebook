@@ -9,6 +9,7 @@ RUN pip install \
     "git+https://github.com/data-8/nbgitpuller" \
     "jupyter-spark==0.4.0" \
     "lxml==4.2.1" \
+    "RISE==5.3.0" \
     && \
     jupyter serverextension enable --py jupyter_spark --sys-prefix && \
     jupyter serverextension enable --py nbgitpuller --sys-prefix && \
@@ -22,6 +23,8 @@ RUN pip install \
     jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader && \
     jupyter nbextension disable --sys-prefix --section=tree assignment_list/main && \
     jupyter nbextension disable --sys-prefix --section=tree formgrader/main && \
+    jupyter-nbextension install rise --py --sys-prefix && \
+    jupyter-nbextension enable rise --py --sys-prefix && \
     rm -rf /home/$NB_USER/.local && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
