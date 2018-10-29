@@ -10,6 +10,7 @@ RUN pip install \
     "jupyter-spark==0.4.0" \
     "lxml==4.2.1" \
     "RISE==5.3.0" \
+    "bqplot==0.11.1" \
     && \
     jupyter serverextension enable --py jupyter_spark --sys-prefix && \
     jupyter serverextension enable --py nbgitpuller --sys-prefix && \

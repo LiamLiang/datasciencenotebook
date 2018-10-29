@@ -1,1 +1,5 @@
-env/
+.git
+.ipynb_checkpoints
+.DS_Store
+.gitignore
+env
