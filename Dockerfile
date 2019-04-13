@@ -1,4 +1,4 @@
-FROM jupyter/pyspark-notebook
+FROM jupyter/pyspark-notebook:08e09e60eb05
 
 LABEL maintainer="Daniel Acuna <deacuna@syr.edu>"
 
@@ -11,6 +11,8 @@ RUN pip install \
     "lxml==4.2.1" \
     "RISE==5.3.0" \
     "bqplot==0.11.1" \
+    "https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl" \
+    "torchvision" \
     && \
     jupyter serverextension enable --py jupyter_spark --sys-prefix && \
     jupyter serverextension enable --py nbgitpuller --sys-prefix && \
