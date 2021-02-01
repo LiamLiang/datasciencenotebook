@@ -4,6 +4,10 @@ LABEL maintainer="Daniel Acuna <deacuna@syr.edu>"
 
 USER root
 
+RUN apt-get update && apt-get install -y \
+  libxml2-dev \
+  libxslt-dev
+
 RUN pip install \
     "nbgrader==0.5.4" \
     "git+https://github.com/data-8/nbgitpuller" \
