@@ -15,9 +15,9 @@ RUN pip install \
     "lxml==4.2.1" \
     "RISE==5.3.0" \
     "bqplot==0.11.1" \
-    "torch" \
+    "torch==1.7.1" \
     "torchvision" \
-    "dask[complete]" \
+    "dask[complete]==2.11.0" \
     && \
     jupyter serverextension enable --py jupyter_spark --sys-prefix && \
     jupyter serverextension enable --py nbgitpuller --sys-prefix && \
